@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  <script src="script.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="todoCtrl">
+<form ng-submit="add()">
+  <input type="text" ng-model="todoInput">
+  <input type="submit" value="Add">
+</form>
+<div ng-repeat="x in todoList">
+  <input type="checkbox" ng-model="x.done"> <span ng-bind="x.todoText"></span>
+</div>
+<p>
+  <button ng-click="all()">Select All</button>
+  <button ng-click="delete()">Delete</button>
+</p>
+</body>
+</html>
